@@ -1,4 +1,3 @@
-#include "solve.h"
 #include <cuda_runtime.h>
 #include <iostream>
 
