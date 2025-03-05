@@ -1,0 +1,13 @@
+Each thread handles one element of the input array.
+First, it finds the maximum value in the array to use the "max trick" - subtracting this maximum from each element before computing the exponential to prevent numerical overflow.
+Then it calculates the exponential of its assigned element (after subtracting the max value).
+It synchronizes threads to ensure all exponential calculations are complete.
+Next, it computes the sum of all exponential values.
+Finally, it normalizes by dividing each exponential value by the sum.
+
+This implementation properly handles the "max trick" as required. By subtracting the maximum value before exponentiation, we prevent potential overflow issues while mathematically producing the same result (since the exponential terms will be scaled by a constant factor that cancels out during normalization).
+The code follows all the requirements:
+
+It only uses CUDA native features
+The solve function signature remains unchanged
+The final result is stored in the output array
